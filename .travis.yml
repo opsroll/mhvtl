@@ -1,10 +1,10 @@
 matrix:
   include:
   - os: linux
-  language: c
-  compiler:
-  - clang
-  - gcc
+    language: c
+    compiler:
+    - clang
+    - gcc
 addons:
   apt:
     packages:
