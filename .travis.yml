@@ -4,8 +4,8 @@ compiler:
   - clang
   - gcc
 
-# use the new container infrastructure
-sudo: false
+# DO NOT use the new container infrastructure
+sudo: true
 
 addons:
   apt:
