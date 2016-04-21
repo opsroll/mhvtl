@@ -1,0 +1,24 @@
+matrix:
+  include:
+  - os: linux
+  language: c
+  compiler:
+  - clang
+  - gcc
+addons:
+  apt:
+    packages:
+    - sg3_utils
+    - mt
+    - mtx
+    - lsscsi
+install: 
+scripts: 
+  - make ubuntu=1
+deploy:
+  provider: releases
+  api_key:
+    secure: e+X5A4RCJOMRRKyVLjGwMX/EYvmYLf4is0zFXONBMuJaARKTdbkUSxzNGhvzU+xdqA8EH1JiQS0TTuzk0XrEgzf1+zuJACpTP0gZ19K2MTqgLCa8hsAGjvFPn8ikpFOp3UJjOPNItoxJ3H1/HrLQR+iYEV4Q7BO9ZAalKxvyT3vMp2biBJZKM4L6GvPMMHr0WUMV5lg1tgUwucuNKk3Z+5oNZx8QP0M4ob8s4Lz58K16U0NYvEiijZd5Sim4gBI98eQiJFmTmFM4YDkvUL32krYlLQhqPLXHrWv55xs5oCMzubhUbkfci3K+vEUMMDGrYepqacDUbyKM+4NuVXTTF5y7/y1tVp9SNOEZJUnf1JvmNOthmFlerUqPOYoS1bh3CzTGsI3OCJnlBF+/XMHiuQtYAZl2zQ3Ow6pcm49+mk3elJfZ/4GPD5/5WEx9UURxLhHuvbNTaqWIKDaPhaB/0gtlaVcHXCum2rKtsGt2yHB3M+ZtsSbQnETLvKqCN1CrP8fbzZEubgeAXMq2yEwJG6Fxp2sgde5ezWEH80EyshtyXNQJ42QVdzasWYPbAdxZwcdEZSMH16GhV29RuKbA4UwQMitO1046vt/i/wyCk7mrpQ/havRtD5VAC9snNrYzwdYpBt8S/HRoVMnED3tKylRvgjTeXUasd6tWO0PFq0Y=
+  file: build/mhvtl-*.tgz
+  on:
+    repo: opsroll/mhvtl
