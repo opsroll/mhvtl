@@ -1,10 +1,12 @@
-matrix:
-  include:
-  - os: linux
-    language: c
-    compiler:
-    - clang
-    - gcc
+os: linux
+language: C
+compiler:
+  - clang
+  - gcc
+
+# use the new container infrastructure
+sudo: false
+
 addons:
   apt:
     packages:
@@ -12,9 +14,12 @@ addons:
     - mt
     - mtx
     - lsscsi
+
 install: 
+
 scripts: 
   - make ubuntu=1
+
 deploy:
   provider: releases
   api_key:
